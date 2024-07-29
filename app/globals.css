@@ -11,6 +11,12 @@
 	gap: 32px;
 }
 
+.services-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 32px;
+}
+
 @media screen and (max-width: 992px) {
 	.hero {
 		grid-template-columns: 1fr;

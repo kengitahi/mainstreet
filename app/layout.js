@@ -19,13 +19,13 @@ const lexend = Lexend({
 
 export const metadata = {
   title: {
-    default: "MainStreet Digital - Your Local Business, Our Digital Expertise",
+    default: "MainStreet Digital - Your Business, Our Digital Expertise",
     template: "%s - MainStreet Digital",
   },
-  description: "MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help local businesses thrive online.",
+  description: "MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help businesses thrive online.",
   openGraph: {
-    title: 'MainStreet Digital - Your Local Business, Our Digital Expertise',
-    description: "MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help local businesses thrive online.",
+    title: 'MainStreet Digital - Your Business, Our Digital Expertise',
+    description: "MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help businesses thrive online.",
     url: 'https://mainstreetdigital.netlify.app/',
     siteName: 'MainStreet Digital',
     type: 'website',
