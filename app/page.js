@@ -69,7 +69,7 @@ export default function Home() {
             Boost your visibility in local search results, helping nearby customers find your business when they need it most.
           </ServicesCard>
 
-          <ServicesCard title="Email Marketing Setup" href='contact' category="SEO and Marketing">
+          <ServicesCard title="Email Marketing Setup" href='services#seo' category="SEO and Marketing">
             Design and implement email campaigns that nurture leads and keep your customers informed about your latest offerings.
           </ServicesCard>
 
@@ -82,11 +82,11 @@ export default function Home() {
             Seamlessly transition your existing website or database to a new platform.
           </ServicesCard>
 
-          <ServicesCard title="Website Maintenance & Support " href='services#migration' category="Business Support">
+          <ServicesCard title="Website Maintenance & Support " href='services#maintenance' category="Business Support">
             Keeping your site secure, up-to-date, and running smoothly with regular maintenance and dedicated support.
           </ServicesCard>
 
-          <ServicesCard title="Website Speed Optimization" href='services#migration' category="Business Support">
+          <ServicesCard title="Website Speed Optimization" href='contact' category="Business Support">
             Enhance your site&apos;s loading speed to improve user experience and search engine rankings.
           </ServicesCard>
         </div>
