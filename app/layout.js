@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${lexend.variable}`}>
+        <script>0</script>
         <Nav />
         {children}
         <Footer />
