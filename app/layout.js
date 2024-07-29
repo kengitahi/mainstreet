@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: 'MainStreet Digital - Your Local Business, Our Digital Expertise',
     description: "MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help local businesses thrive online.",
-    url: 'https://mainstreetdigital.netlify.com/',
+    url: 'https://mainstreetdigital.netlify.app/',
     siteName: 'MainStreet Digital',
     type: 'website',
   },

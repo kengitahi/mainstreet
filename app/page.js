@@ -17,7 +17,7 @@ export default function Home() {
 
           <h2 className='mb-8 text-5xl font-bold capitalize font-lexend'>Digital Solutions for your Business.</h2>
 
-          <p className='mb-8 text-gray-600 text-md font-inter'>MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help local businesses thrive online. We combine cutting-edge technology and big-agency expertise to boost your online presence, connect you with more customers, and empower your businesses to succeed online.</p>
+          <p className='mb-8 text-gray-600 text-md font-inter'>MainStreet Digital crafts custom, high-impact web solutions that capture your brand&apos;s essence and help local businesses thrive online. We combine cutting-edge technology and big-agency expertise to boost your online presence, connect you with more customers, and empower your businesses to succeed online.</p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <PrimaryBtnLink text="Start Your Digital Journey" href="#">
@@ -25,7 +25,7 @@ export default function Home() {
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
               </svg>
             </PrimaryBtnLink>
-            <TransparentBtnLink href={'/'} text="Learn More">
+            <TransparentBtnLink href='/' text="Learn More">
               <svg class="w-6 h-6 text-currentColor dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd" />
               </svg>
