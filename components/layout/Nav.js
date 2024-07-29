@@ -13,7 +13,7 @@ const Nav = () => {
         <nav className="fixed top-0 z-20 w-full bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900 start-0 dark:border-gray-600 font-lexend">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <a href="https://mainstreetdigital.netlify.app/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <Image src={Logo} alt="MainStreet Digital Logo" priority height={64} />
+                    <Image src={Logo} alt="MainStreet Digital Logo" priority height={44} />
                 </a>
                 <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
                     <div className="hidden md:flex">
