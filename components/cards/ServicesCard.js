@@ -5,7 +5,7 @@ import PrimaryBtnLink from '../buttons/PrimaryBtnLink';
 
 import heroImg3 from '@/public/imgs/hero-img-3.jpg';
 
-const ServicesCard = ({ title, children, href, category }) => {
+const ServicesCard = ({ title, children, href, category, icon }) => {
 
     let linkText;
 
@@ -15,10 +15,12 @@ const ServicesCard = ({ title, children, href, category }) => {
         linkText = 'Learn More';
     }
 
+    let imgSrc = `/imgs/icons/` + icon;
+
     return (
         <div className="bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <a href="#">
-                <Image src={heroImg3} alt="web development office" style={{}} className='rounded-lg' priority />
+            <a href="#" className='flex items-center justify-center'>
+                <Image src={imgSrc} alt={title} style={{}} className='text-center rounded-lg' priority width={200} height={200} />
             </a>
             <div className="flex flex-col justify-center p-5">
                 <a href="#">

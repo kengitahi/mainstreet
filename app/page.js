@@ -58,40 +58,40 @@ export default function Home() {
         </p>
 
         <div className="services-cards">
-          <ServicesCard title="Custom Website Design & Development" href='services#webdev' category="Web Development">
+          <ServicesCard title="Custom Website Design & Development" href='services#webdev' category="Web Development" icon="development.png">
             WordPress and Laravel Websites that capture your brand&apos;s essence and provide an exceptional user experience, optimized for both desktop and mobile devices.
           </ServicesCard>
 
-          <ServicesCard title="E-commerce and WooCommerce Solutions " href='services#ecommerce' category="Web Development">
+          <ServicesCard title="E-commerce and WooCommerce Solutions " href='services#ecommerce' category="Web Development" icon="online.png">
             Robust WooCommerce and Laravel online stores that turn browsers into buyers, featuring secure payment gateways(including M-pesa) and inventory management systems.
           </ServicesCard>
 
-          <ServicesCard title="Website Redesign " href='services#redesign' category="Web Development">
+          <ServicesCard title="Website Redesign " href='services#redesign' category="Web Development" icon="design.png">
             Is your website looking a bit dated? Does it no longer perform as expected? We can redesign it for you!
           </ServicesCard>
 
-          <ServicesCard title="Local SEO" href='contact' category="SEO and Marketing">
+          <ServicesCard title="Local SEO" href='contact' category="SEO and Marketing" icon="quality.png">
             Boost your visibility in local search results, helping nearby customers find your business when they need it most.
           </ServicesCard>
 
-          <ServicesCard title="Email Marketing Setup" href='services#seo' category="SEO and Marketing">
+          <ServicesCard title="Email Marketing Setup" href='services#seo' category="SEO and Marketing" icon="web-development.png">
             Design and implement email campaigns that nurture leads and keep your customers informed about your latest offerings.
           </ServicesCard>
 
 
-          <ServicesCard title="Online Booking & Appointment Systems" href='contact' category="SEO and Marketing">
+          <ServicesCard title="Online Booking & Appointment Systems" href='contact' category="SEO and Marketing" icon="email.png">
             Implement convenient scheduling tools that allow customers to book services directly through your website.
           </ServicesCard>
 
-          <ServicesCard title="Website and Database Migration " href='services#migration' category="Business Support">
+          <ServicesCard title="Website and Database Migration " href='services#migration' category="Business Support" icon="server.png">
             Seamlessly transition your existing website or database to a new platform.
           </ServicesCard>
 
-          <ServicesCard title="Website Maintenance & Support " href='services#maintenance' category="Business Support">
+          <ServicesCard title="Website Maintenance & Support " href='services#maintenance' category="Business Support" icon="maintenance.png">
             Keeping your site secure, up-to-date, and running smoothly with regular maintenance and dedicated support.
           </ServicesCard>
 
-          <ServicesCard title="Website Speed Optimization" href='contact' category="Business Support">
+          <ServicesCard title="Website Speed Optimization" href='contact' category="Business Support" icon="percentage.png">
             Enhance your site&apos;s loading speed to improve user experience and search engine rankings.
           </ServicesCard>
         </div>
