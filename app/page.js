@@ -70,11 +70,11 @@ export default function Home() {
             Is your website looking a bit dated? Does it no longer perform as expected? We can redesign it for you!
           </ServicesCard>
 
-          <ServicesCard title="Local SEO" href='contact' category="SEO and Marketing" icon="quality.png">
+          <ServicesCard title="Local SEO" href='services#seo' category="SEO and Marketing" icon="quality.png">
             Boost your visibility in local search results, helping nearby customers find your business when they need it most.
           </ServicesCard>
 
-          <ServicesCard title="Email Marketing Setup" href='services#seo' category="SEO and Marketing" icon="web-development.png">
+          <ServicesCard title="Email Marketing Setup" href='contact' category="SEO and Marketing" icon="web-development.png">
             Design and implement email campaigns that nurture leads and keep your customers informed about your latest offerings.
           </ServicesCard>
 

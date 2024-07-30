@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	scroll-padding-top: 5rem;
+}
+
+body {
+	scroll-behavior: smooth;
+}
+
 .hero {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14,9 +22,26 @@
 	gap: 32px;
 }
 
+.services-cards-horizontal {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
 @media screen and (max-width: 992px) {
 	.hero {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.horizontal {
+		display: flex;
+		flex-direction: column;
+	}
+	.horizontal-odd {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }
 
