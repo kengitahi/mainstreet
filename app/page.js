@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from "framer-motion";
-
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink';
 import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
@@ -11,16 +9,6 @@ import heroImg3 from '@/public/imgs/hero-img-3.jpg';
 import Image from 'next/image';
 
 export default function Home() {
-
-  const servicesParent = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5
-      }
-    }
-  }
 
   return (
     <main className="flex flex-col flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto mt-16">
