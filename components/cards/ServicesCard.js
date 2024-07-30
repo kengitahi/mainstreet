@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import PrimaryBtnLink from '../buttons/PrimaryBtnLink';
 
@@ -16,13 +17,13 @@ const ServicesCard = ({ title, children, href, category }) => {
     }
 
     return (
-        <div class="bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="bg-white rounded-lg shadow-md dark:bg-gray-800">
             <a href="#">
                 <Image src={heroImg3} alt="web development office" style={{}} className='rounded-lg' priority />
             </a>
-            <div class="p-5 flex justify-center flex-col">
+            <div className="flex flex-col justify-center p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-lexend">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-lexend">
                         {title}
                     </h5>
                 </a>

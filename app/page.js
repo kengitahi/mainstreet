@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from "framer-motion";
+
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink';
 import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
@@ -7,6 +11,17 @@ import heroImg3 from '@/public/imgs/hero-img-3.jpg';
 import Image from 'next/image';
 
 export default function Home() {
+
+  const servicesParent = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5
+      }
+    }
+  }
+
   return (
     <main className="flex flex-col flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto mt-16">
       <div className="my-20 hero">
@@ -17,7 +32,9 @@ export default function Home() {
             <h1 className='text-base text-blue-600 font-lexend'>MainStreet Digital - Your Business, Our Digital Expertise</h1>
           </div>
 
-          <h2 className='mb-8 text-5xl font-bold leading-tight capitalize font-lexend'>Digital Solutions for your Business.</h2>
+          <h2 className='mb-8 text-5xl font-bold leading-tight capitalize font-lexend'>
+            Digital Solutions for your Business.
+          </h2>
 
           <p className='mb-4 leading-relaxed text-gray-600 text-md font-inter'>We combine cutting-edge technology and big-agency expertise with a deep understanding of the digital landscape to boost your online presence, connect you with more customers, and empower your business to succeed online.</p>
 
