@@ -17,7 +17,7 @@ export default function Home() {
 
           <div className="flex items-center px-4 py-3 mb-8 bg-blue-100 rounded-full shadow-md max-w-fit">
             <span className='w-2 h-2 mr-2 text-5xl text-transparent bg-blue-600 rounded-full'>.</span>
-            <h1 className='text-base text-blue-600 font-lexend'>MainStreet Digital - Your Business, Our Digital Expertise</h1>
+            <h1 className='text-base text-[#232BB1] font-lexend font-semibold tracking-wide'>MainStreet Digital - Your Business, Our Digital Expertise</h1>
           </div>
 
           <h2 className='mb-8 text-5xl font-bold leading-tight capitalize font-lexend'>
