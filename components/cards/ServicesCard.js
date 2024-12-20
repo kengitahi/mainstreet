@@ -33,7 +33,7 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     </a>
                     <div className="mb-4 font-normal leading-relaxed text-gray-600 dark:text-gray-600 font-inter">
                         <p className='flex items-center pt-1 pb-2'>
-                            <span className='inline-block w-2 h-2 mr-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block font-bold capitalize text-md text-muted ">{category}</span>
+                            <span className='inline-block mr-2 w-2 h-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block font-bold capitalize text-md text-muted">{category}</span>
                         </p>
                         {children}
                     </div>
@@ -47,8 +47,8 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     <Image
                         src={`/imgs/icons/${icon}`}
                         alt={title}
-                        width={horizontal ? 100 : 64}
-                        height={horizontal ? 100 : 64}
+                        width={horizontal ? 100 : 196}
+                        height={horizontal ? 100 : 196}
                         className="object-contain"
                         priority={false}
                         quality={85}
@@ -63,8 +63,8 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     <Image
                         src={`/imgs/icons/${icon}`}
                         alt={title}
-                        width={horizontal ? 100 : 64}
-                        height={horizontal ? 100 : 64}
+                        width={horizontal ? 100 : 196}
+                        height={horizontal ? 100 : 196}
                         className="object-contain"
                         priority={false}
                         quality={85}
@@ -78,7 +78,7 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     </a>
                     <div className="mb-4 font-normal leading-relaxed text-gray-600 dark:text-gray-600 font-inter">
                         <p className='flex items-center pt-1 pb-2'>
-                            <span className='inline-block w-2 h-2 mr-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block font-bold capitalize text-md text-muted ">{category}</span>
+                            <span className='inline-block mr-2 w-2 h-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block font-bold capitalize text-md text-muted">{category}</span>
                         </p>
                         {children}
                     </div>

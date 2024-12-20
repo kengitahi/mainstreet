@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react';
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink';
 import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
@@ -7,43 +8,115 @@ import ServicesCard from '@/components/cards/ServicesCard';
 import heroImg1 from '@/public/imgs/hero-img-1.jpg';
 import heroImg3 from '@/public/imgs/hero-img-3.jpg';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('webdev');
+
+  const tabs = [
+    { id: 'webdev', label: 'Web Development' },
+    { id: 'seo', label: 'SEO and Marketing' },
+    { id: 'business', label: 'Business Support' }
+  ];
+
+  const services = {
+    webdev: [
+      {
+        title: "Custom Website Design & Development",
+        href: 'services#webdev',
+        category: "Web Development",
+        icon: "development.png",
+        description: "Get a custom-designed website that perfectly represents your brand and meets your specific needs."
+      },
+      {
+        title: "E-commerce and WooCommerce Solutions",
+        href: 'services#ecommerce',
+        category: "Web Development",
+        icon: "online.png",
+        description: "Launch your online store with powerful e-commerce solutions tailored to your business including secure payment gateways(e.g M-pesa, PayPal, and Stripe) and inventory management systems."
+      },
+      {
+        title: "Website Redesign",
+        href: 'services#redesign',
+        category: "Web Development",
+        icon: "design.png",
+        description: "We will transform your existing website with a modern, user-friendly design that converts visitors into customers."
+      }
+    ],
+    seo: [
+      {
+        title: "Local SEO",
+        href: 'services#seo',
+        category: "SEO and Marketing",
+        icon: "quality.png",
+        description: "We will help improve your local search rankings and attract more customers from your area."
+      },
+      {
+        title: "Email Marketing Setup",
+        href: 'contact',
+        category: "SEO and Marketing",
+        icon: "web-development.png",
+        description: "We will build and engage your audience with effective email marketing campaigns."
+      },
+      {
+        title: "Online Booking & Appointment Systems",
+        href: 'contact',
+        category: "SEO and Marketing",
+        icon: "email.png",
+        description: "We will help you streamline your booking process with an efficient online scheduling system. We implement convenient scheduling tools that allow customers to book services directly through your website."
+      }
+    ],
+    business: [
+      {
+        title: "Website and Database Migration",
+        href: 'services#migration',
+        category: "Business Support",
+        icon: "server.png",
+        description: "We will safely migrate your website and data from your existing hosting provider to a new one with minimal downtime and zero data loss."
+      },
+      {
+        title: "Website Maintenance & Support",
+        href: 'services#maintenance',
+        category: "Business Support",
+        icon: "maintenance.png",
+        description: "We will help keep your website running smoothly with our comprehensive website maintenance services."
+      },
+      {
+        title: "Website Speed Optimization",
+        href: 'contact',
+        category: "Business Support",
+        icon: "percentage.png",
+        description: "We will boost your website's performance and user experience with our website (including WordPress) optimization services."
+      }
+    ]
+  };
 
   return (
-    <main className="flex flex-col flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto mt-16">
+    <main className="flex flex-col flex-wrap justify-between items-center p-4 mx-auto mt-16 max-w-screen-xl">
       <div className="my-20 hero">
         <div>
-
           <div className="flex items-center px-4 py-3 mb-8 bg-blue-100 rounded-full shadow-md max-w-fit">
-            <span className='w-2 h-2 mr-2 text-5xl text-transparent bg-blue-600 rounded-full'>.</span>
+            <span className='mr-2 w-2 h-2 text-5xl text-transparent bg-blue-600 rounded-full'>.</span>
             <h1 className='text-base text-[#232BB1] font-lexend font-semibold tracking-wide'>MainStreet Digital - Your Business, Our Digital Expertise</h1>
           </div>
 
-          <h2 className='mb-8 text-5xl font-bold leading-tight capitalize font-lexend'>
-            Digital Solutions for your Business.
-          </h2>
+          <h2 className="mb-6 max-w-2xl text-4xl font-bold tracking-tight text-gray-900 dark:text-white font-lexend">Transform Your Business with Expert Digital Solutions</h2>
+          <p className="mb-4 max-w-2xl font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-600 font-inter">Elevate your online presence with our comprehensive digital services tailored for small businesses.</p>
 
-          <p className='mb-4 leading-relaxed text-gray-600 text-md font-inter'>We combine cutting-edge technology and big-agency expertise with a deep understanding of the digital landscape to boost your online presence, connect you with more customers, and empower your business to succeed online.</p>
-
-          <p className='mb-4 leading-relaxed text-gray-600 text-md font-inter'>Custom Web Development | SEO | Digial Marketing</p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <PrimaryBtnLink text="Start Your Digital Journey" href="#">
-              <svg className="w-6 h-6 text-currentColor dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <p className="mb-6 max-w-2xl font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-600 font-inter">We combine cutting-edge technology and big-agency expertise with a deep understanding of the digital landscape to boost your online presence, connect you with more customers, and empower your business to succeed online.</p>
+          <div className="flex flex-wrap gap-4">
+            <PrimaryBtnLink size="md" href="/contact" className="group">
+              Get Started
+              <svg className="w-6 h-6 transition-all text-currentColor dark:text-white group:hover:translate-x-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
               </svg>
             </PrimaryBtnLink>
-            <TransparentBtnLink href='/' text="Learn More">
-              <svg className="w-6 h-6 text-currentColor dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd" />
-              </svg>
-            </TransparentBtnLink>
+            <TransparentBtnLink href="/services">Learn More</TransparentBtnLink>
           </div>
         </div>
 
-        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="relative w-full h-[300px] md:h-[400px]">
+        <div className="grid relative grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="hidden md:block relative w-full h-[300px] md:h-[400px]">
             <Image
               src={heroImg1}
               alt="Hero image 1"
@@ -68,52 +141,58 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full mb-20 services">
-        <h2 className='mb-4 text-5xl font-bold leading-tight text-center capitalize font-lexend'>Our Services, <br /> Tailored for your Business.</h2>
-        <p className='mb-8 leading-relaxed text-center text-gray-600 text-md font-inter'>
-          Custom Web Development and Marketing Solutions for Growing Businesses.
-        </p>
+      <section className="py-16 w-full">
+        <h2 className="mb-12 text-4xl font-bold text-center font-lexend">Our Services</h2>
 
-        <div className="services-cards">
-          <ServicesCard title="Custom Website Design & Development" href='services#webdev' category="Web Development" icon="development.png">
-            WordPress and Laravel Websites that capture your brand&apos;s essence and provide an exceptional user experience, optimized for both desktop and mobile devices.
-          </ServicesCard>
+        {/* Tabs - visible only on md and above */}
+        <div className="hidden md:block">
+          <div className="flex justify-center mb-8">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={clsx(
+                  'px-6 py-3 font-semibold transition-colors duration-200 font-lexend text-lg',
+                  activeTab === tab.id
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-500 hover:text-blue-600'
+                )}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-          <ServicesCard title="E-commerce and WooCommerce Solutions " href='services#ecommerce' category="Web Development" icon="online.png">
-            Robust WooCommerce and Laravel online stores that turn browsers into buyers, featuring secure payment gateways(including M-pesa) and inventory management systems.
-          </ServicesCard>
-
-          <ServicesCard title="Website Redesign " href='services#redesign' category="Web Development" icon="design.png">
-            Is your website looking a bit dated? Does it no longer perform as expected? We can redesign it for you!
-          </ServicesCard>
-
-          <ServicesCard title="Local SEO" href='services#seo' category="SEO and Marketing" icon="quality.png">
-            Boost your visibility in local search results, helping nearby customers find your business when they need it most.
-          </ServicesCard>
-
-          <ServicesCard title="Email Marketing Setup" href='contact' category="SEO and Marketing" icon="web-development.png">
-            Design and implement email campaigns that nurture leads and keep your customers informed about your latest offerings.
-          </ServicesCard>
-
-
-          <ServicesCard title="Online Booking & Appointment Systems" href='contact' category="SEO and Marketing" icon="email.png">
-            Implement convenient scheduling tools that allow customers to book services directly through your website.
-          </ServicesCard>
-
-          <ServicesCard title="Website and Database Migration " href='services#migration' category="Business Support" icon="server.png">
-            Seamlessly transition your existing website or database to a new platform.
-          </ServicesCard>
-
-          <ServicesCard title="Website Maintenance & Support " href='services#maintenance' category="Business Support" icon="maintenance.png">
-            Keeping your site secure, up-to-date, and running smoothly with regular maintenance and dedicated support.
-          </ServicesCard>
-
-          <ServicesCard title="Website Speed Optimization" href='contact' category="Business Support" icon="percentage.png">
-            Enhance your site&apos;s loading speed to improve user experience and search engine rankings.
-          </ServicesCard>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {services[activeTab].map((service, index) => (
+              <ServicesCard
+                key={index}
+                title={service.title}
+                href={service.href}
+                category={service.category}
+                icon={service.icon}
+              >
+                {service.description}
+              </ServicesCard>
+            ))}
+          </div>
         </div>
-      </div>
 
+        {/* Mobile view - all services listed */}
+        <div className="grid grid-cols-1 gap-8 md:hidden">
+          {Object.values(services).flat().map((service, index) => (
+            <ServicesCard
+              key={index}
+              title={service.title}
+              href={service.href}
+              category={service.category}
+              icon={service.icon}
+            >
+              {service.description}
+            </ServicesCard>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
