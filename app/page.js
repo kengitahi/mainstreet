@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink';
 import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
+import { tabs, services } from '@/data/services';
 
 import heroImg1 from '@/public/imgs/hero-img-1.jpg';
 import heroImg3 from '@/public/imgs/hero-img-3.jpg';
@@ -14,84 +15,6 @@ import clsx from 'clsx';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('webdev');
-
-  const tabs = [
-    { id: 'webdev', label: 'Web Development' },
-    { id: 'seo', label: 'SEO and Marketing' },
-    { id: 'business', label: 'Business Support' }
-  ];
-
-  const services = {
-    webdev: [
-      {
-        title: "Custom Website Design & Development",
-        href: 'services#webdev',
-        category: "Web Development",
-        icon: "development.png",
-        description: "Get a custom-designed website that perfectly represents your brand and meets your specific needs."
-      },
-      {
-        title: "E-commerce and WooCommerce Solutions",
-        href: 'services#ecommerce',
-        category: "Web Development",
-        icon: "online.png",
-        description: "Launch your online store with powerful e-commerce solutions tailored to your business including secure payment gateways(e.g M-pesa, PayPal, and Stripe) and inventory management systems."
-      },
-      {
-        title: "Website Redesign",
-        href: 'services#redesign',
-        category: "Web Development",
-        icon: "design.png",
-        description: "We will transform your existing website with a modern, user-friendly design that converts visitors into customers."
-      }
-    ],
-    seo: [
-      {
-        title: "Local SEO",
-        href: 'services#seo',
-        category: "SEO and Marketing",
-        icon: "quality.png",
-        description: "We will help improve your local search rankings and attract more customers from your area."
-      },
-      {
-        title: "Email Marketing Setup",
-        href: 'contact',
-        category: "SEO and Marketing",
-        icon: "web-development.png",
-        description: "We will build and engage your audience with effective email marketing campaigns."
-      },
-      {
-        title: "Online Booking & Appointment Systems",
-        href: 'contact',
-        category: "SEO and Marketing",
-        icon: "email.png",
-        description: "We will help you streamline your booking process with an efficient online scheduling system. We implement convenient scheduling tools that allow customers to book services directly through your website."
-      }
-    ],
-    business: [
-      {
-        title: "Website and Database Migration",
-        href: 'services#migration',
-        category: "Business Support",
-        icon: "server.png",
-        description: "We will safely migrate your website and data from your existing hosting provider to a new one with minimal downtime and zero data loss."
-      },
-      {
-        title: "Website Maintenance & Support",
-        href: 'services#maintenance',
-        category: "Business Support",
-        icon: "maintenance.png",
-        description: "We will help keep your website running smoothly with our comprehensive website maintenance services."
-      },
-      {
-        title: "Website Speed Optimization",
-        href: 'contact',
-        category: "Business Support",
-        icon: "percentage.png",
-        description: "We will boost your website's performance and user experience with our website (including WordPress) optimization services."
-      }
-    ]
-  };
 
   return (
     <main id="main-content" className="flex flex-col flex-wrap justify-between items-center p-4 mx-auto mt-16 max-w-screen-xl">
