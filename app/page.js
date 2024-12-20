@@ -42,11 +42,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative">
-          <Image src={heroImg3} alt="web development office" style={{ position: 'absolute', marginTop: '0%', maxWidth: '90%', height: 'auto', right: 0 }} className='rounded-lg' priority />
-          <div>
-            <div className='w-1/2 h-full'></div>
-            <Image src={heroImg1} alt="web developer sitting at a desk" style={{ position: 'relative', marginTop: '10%', maxWidth: '90%' }} className='rounded-lg' priority />
+        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="relative w-full h-[300px] md:h-[400px]">
+            <Image
+              src={heroImg1}
+              alt="Hero image 1"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              className="object-cover rounded-lg"
+              quality={90}
+            />
+          </div>
+          <div className="relative w-full h-[300px] md:h-[400px]">
+            <Image
+              src={heroImg3}
+              alt="Hero image 3"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              className="object-cover rounded-lg"
+              quality={90}
+            />
           </div>
         </div>
       </div>

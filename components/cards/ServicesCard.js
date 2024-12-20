@@ -22,8 +22,6 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
         divClasses = 'horizontal-odd grid grid-cols-[2fr_1fr] w-full rounded-lg shadow-md dark:bg-gray-800 py-6';
     }
 
-    let imgSrc = `/imgs/icons/` + icon;
-
     if (odd) {
         return (
             <div className={divClasses} id={id}>
@@ -45,17 +43,33 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                         </svg>
                     </PrimaryBtnLink>
                 </div>
-                <a href={href} className='flex items-center justify-center'>
-                    <Image src={imgSrc} alt={title} style={{}} className='text-center rounded-lg' priority width={200} height={200} />
-                </a>
+                <div className={`flex items-center justify-center ${horizontal ? 'w-full h-full' : 'p-6'}`}>
+                    <Image
+                        src={`/imgs/icons/${icon}`}
+                        alt={title}
+                        width={horizontal ? 100 : 64}
+                        height={horizontal ? 100 : 64}
+                        className="object-contain"
+                        priority={false}
+                        quality={85}
+                    />
+                </div>
             </div>
         )
     } else {
         return (
             <div className={divClasses} id={id}>
-                <a href={href} className='flex items-center justify-center'>
-                    <Image src={imgSrc} alt={title} style={{}} className='text-center rounded-lg' priority width={200} height={200} />
-                </a>
+                <div className={`flex items-center justify-center ${horizontal ? 'w-full h-full' : 'p-6'}`}>
+                    <Image
+                        src={`/imgs/icons/${icon}`}
+                        alt={title}
+                        width={horizontal ? 100 : 64}
+                        height={horizontal ? 100 : 64}
+                        className="object-contain"
+                        priority={false}
+                        quality={85}
+                    />
+                </div>
                 <div className="flex flex-col justify-center p-5">
                     <a href={href}>
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-lexend">
