@@ -46,7 +46,7 @@ export default function Contact() {
 			// Create a temporary form element
 			const form = document.createElement('form');
 			form.method = 'POST';
-			form.action = '/form-elements.html';
+			form.action = '/netlify/form-elements.html';
 
 			// Add hidden input fields for form data
 			Object.entries(formData).forEach(([key, value]) => {
