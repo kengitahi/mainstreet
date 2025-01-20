@@ -6,12 +6,13 @@ import { useInView } from 'react-intersection-observer';
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink';
 import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
-import { tabs, services } from '@/data/services';
+import { tabs, services } from '@/data/ServicesData';
 
 import heroImg1 from '@/public/imgs/hero-img-1.jpg';
 import heroImg3 from '@/public/imgs/hero-img-3.jpg';
 import Image from 'next/image';
 import clsx from 'clsx';
+import TestimonialSlider from '@/components/sliders/TestimonialSlider';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('webdev');
@@ -235,6 +236,26 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
+      </motion.section>
+
+      {/* <div className="px-4 py-12 mx-auto w-full max-w-6xl"> */}
+
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="py-16 w-full"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 text-4xl font-bold text-center font-lexend"
+        >
+          What Past Clients Say
+        </motion.h2>
+        <TestimonialSlider />
       </motion.section>
     </main>
   );

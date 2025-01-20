@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { subjectsData } from '@/data/subjects';
+import { subjectsData } from '@/data/FormSubjectData';
 
 import Label from '@/components/forms/Label';
 import Input from '@/components/forms/Input';
