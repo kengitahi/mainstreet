@@ -9,10 +9,19 @@ import TextArea from '@/components/forms/TextArea';
 
 import PrimaryBtn from '@/components/buttons/PrimaryBtn';
 
-console.log(subjectData)
-
 export default function Contact() {
-	const { value, label } = subjectData;
+  const { value, label } = subjectData;
+  
+  const handleFormSubmit = async (event) => {
+		event.preventDefault();
+		const formData = new FormData(event.target);
+		await fetch('/__forms.html', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: new URLSearchParams(formData).toString(),
+		});
+		// Success and error handling ...
+  };
 
 	return (
 		<motion.main
@@ -37,7 +46,7 @@ export default function Contact() {
 			</motion.div>
 
 			<div className='contact-form'>
-				<form name='contact' method='POST' data-netlify='true'>
+				<form name='contact' method='POST' onSubmit={handleFormSubmit}>
 					<div className='flex flex-col gap-4 mb-4 md:flex-row'>
 						<div className='flex flex-col flex-1 gap-2'>
 							<Label label='First Name:' />
