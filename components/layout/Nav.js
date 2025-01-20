@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink'
-import Logo from '@/public/imgs/mainstreet-digital.svg'
+import Logo from '@/public/imgs/mainstreet-digital.png'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
@@ -80,8 +80,8 @@ const Nav = () => {
 
     return (
         <>
-            <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg bg-white/70 dark:bg-gray-900 start-0 dark:border-gray-600 font-lexend backdrop-blur-3xl">
-                <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+            <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg backdrop-blur-3xl bg-white/70 dark:bg-gray-900 start-0 dark:border-gray-600 font-lexend">
+                <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-screen-xl">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Image src={Logo} alt="MainStreet Digital Logo" priority height={44} />
                     </a>
@@ -93,7 +93,7 @@ const Nav = () => {
                         <button 
                             onClick={() => setIsOpen(!isOpen)}
                             type="button" 
-                            className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex justify-center items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             aria-controls="navbar-sticky" 
                             aria-expanded={isOpen}
                         >
@@ -119,8 +119,8 @@ const Nav = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-                        <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
+                        <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg border border-gray-100 md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             {navLinks.map((link) => (
                                 <li key={link.href}>
                                     <a 
@@ -149,7 +149,7 @@ const Nav = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 z-20 bg-black/20 backdrop-blur-sm md:hidden"
+                            className="fixed inset-0 z-20 backdrop-blur-sm bg-black/20 md:hidden"
                             onClick={() => setIsOpen(false)}
                         />
                         <motion.div
