@@ -20,7 +20,7 @@ export default function Services() {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <h2 className='mb-4 text-5xl font-bold leading-tight capitalize font-lexend'>{title}</h2>
-        <p className='mb-8 leading-relaxed text-gray-600 md:tex-lg lg:text-xl font-inter'>{description}</p>
+        <p className='mb-8 leading-relaxed text-gray-600 md:text-lg lg:text-xl font-inter'>{description}</p>
       </motion.div>
 
       <div className='services-cards-horizontal'>
