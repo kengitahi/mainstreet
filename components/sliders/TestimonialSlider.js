@@ -119,7 +119,7 @@ const TestimonialSlider = () => {
 
             <button
                 onClick={handlePrevious}
-                className="absolute left-10 top-1/2 p-2 bg-white rounded-full shadow-lg transition-colors -translate-x-4 -translate-y-1/2 md:-translate-x-8 hover:bg-gray-50"
+                className="absolute left-10 top-1/2 p-2 bg-white rounded-full shadow-lg transition-colors -translate-x-4 -translate-y-1/2 md:-translate-x-8 hover:bg-[#232BB1] hover:text-white"
                 aria-label="Previous testimonial"
             >
                 <ChevronLeft className="w-6 h-6" />
@@ -127,10 +127,10 @@ const TestimonialSlider = () => {
 
             <button
                 onClick={handleNext}
-                className="absolute right-10 top-1/2 p-2 bg-white rounded-full shadow-lg transition-colors translate-x-4 -translate-y-1/2 md:translate-x-8 hover:bg-gray-50"
+                className="absolute right-10 top-1/2 p-2 bg-white rounded-full shadow-lg transition-colors translate-x-4 -translate-y-1/2 md:translate-x-8  hover:bg-[#232BB1] hover:text-white"
                 aria-label="Next testimonial"
             >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-6 h-6"/>
             </button>
         </div>
     );
