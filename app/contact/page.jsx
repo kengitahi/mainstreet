@@ -12,15 +12,65 @@ import PrimaryBtn from '@/components/buttons/PrimaryBtn';
 export default function Contact() {
 	const { value, label } = subjectData;
 
+	const [formData, setFormData] = useState({
+		first_name: '',
+		last_name: '',
+		email: '',
+		message: '',
+		subject: '',
+	});
+
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
-		const formData = new FormData(event.target);
-		await fetch('/form-elements.html', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new URLSearchParams(formData).toString(),
-		});
-		// Success and error handling ...
+
+		try {
+			// setStatus('pending');
+			// setError(null);
+
+			// const formData = new FormData(event.target);
+
+			// await fetch('/form-elements.html', {
+			// method: 'POST',
+			// headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			// body: new URLSearchParams(formData).toString(),
+			// });
+
+			// if (res.status===200) {
+			//   setStatus('ok');
+			// } else {
+			//   setStatus('error');
+			//   setError(`${res.status} ${res.statusText}`);
+			// }
+
+			// Create a temporary form element
+			const form = document.createElement('form');
+			form.method = 'POST';
+			form.action = '/form-elements.html';
+
+			// Add hidden input fields for form data
+			Object.entries(formData).forEach(([key, value]) => {
+				const input = document.createElement('input');
+				input.type = 'hidden';
+				input.name = key;
+				input.value = value;
+				form.appendChild(input);
+			});
+
+			// Add the hidden form-name input
+			const formNameInput = document.createElement('input');
+			formNameInput.type = 'hidden';
+			formNameInput.name = 'form-name';
+			formNameInput.value = 'main-contact-form'; // Form name
+			form.appendChild(formNameInput);
+
+			// Submit the form
+			document.body.appendChild(form);
+			form.submit();
+			document.body.removeChild(form);
+		} catch (error) {
+			setStatus('error');
+			setError(error.message);
+		}
 	};
 
 	return (
