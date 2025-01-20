@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { subjectsData } from '@/data/FormSubjectData';
+import { subjectData } from '@/data/FormSubjectData';
 
 import Label from '@/components/forms/Label';
 import Input from '@/components/forms/Input';
@@ -9,8 +9,10 @@ import TextArea from '@/components/forms/TextArea';
 
 import PrimaryBtn from '@/components/buttons/PrimaryBtn';
 
+console.log(subjectData)
+
 export default function Contact() {
-	const { value, label } = subjectsData;
+	const { value, label } = subjectData;
 
 	return (
 		<motion.main
@@ -72,7 +74,7 @@ export default function Contact() {
 							name='subject'
 							className='border border-gray-600 rounded-lg focus:border-[#232BB1] focus:outline-none focus:ring-none focus:ring-offset-0 p-2 w-full'
 						>
-							{subjectsData.map(({ value, label }) => (
+							{subjectData.map(({ value, label }) => (
 								<option
 									value={value}
 									key={value}
