@@ -13,6 +13,9 @@ import PrimaryBtn from '@/components/buttons/PrimaryBtn';
 export default function Contact() {
 	const { value, label } = subjectData;
 
+	const [status, setStatus] = useState('idle');
+	const [error, setError] = useState(null);
+
 	const [formData, setFormData] = useState({
 		first_name: '',
 		last_name: '',
