@@ -6,7 +6,7 @@ import PrimaryBtnLink from '../buttons/PrimaryBtnLink';
 const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, id }) => {
 
     let linkText;
-    let divClasses = "bg-white rounded-lg shadow-md dark:bg-gray-800";
+    let divClasses = "bg-white rounded-lg shadow-lg";
 
     if (href == 'contact') {
         linkText = 'Get Quote';
@@ -15,11 +15,11 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
     }
 
     if (horizontal) {
-        divClasses = 'horizontal grid grid-cols-[1fr_2fr] w-full rounded-lg shadow-md dark:bg-gray-800 py-6';
+        divClasses = 'horizontal grid grid-cols-[1fr_2fr] w-full rounded-lg shadow-lg py-6';
     }
 
     if (odd) {
-        divClasses = 'horizontal-odd grid grid-cols-[2fr_1fr] w-full rounded-lg shadow-md dark:bg-gray-800 py-6';
+        divClasses = 'horizontal-odd grid grid-cols-[2fr_1fr] w-full rounded-lg shadow-lg py-6';
     }
 
     if (odd) {
@@ -33,7 +33,7 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     </a>
                     <div className="mb-4 font-normal leading-relaxed text-gray-600 dark:text-gray-600 font-inter">
                         <p className='flex items-center pt-1 pb-2 font-inter'>
-                            <span className='inline-block mr-2 w-2 h-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span>
+                            <span className='inline-block w-2 h-2 mr-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span>
                             <span className="inline-block text-lg font-bold capitalize">{category}
                             </span>
                         </p>
@@ -86,7 +86,7 @@ const ServicesCard = ({ title, children, href, category, icon, horizontal, odd, 
                     </a>
                     <div className="mb-4 font-normal leading-relaxed text-gray-600 dark:text-gray-600 font-inter">
                         <p className='flex items-center pt-1 pb-2'>
-                            <span className='inline-block mr-2 w-2 h-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block text-lg font-bold capitalize">{category}</span>
+                            <span className='inline-block w-2 h-2 mr-2 text-5xl text-transparent bg-gray-600 rounded-full'>.</span><span className="inline-block text-lg font-bold capitalize">{category}</span>
                         </p>
                         {children}
                     </div>

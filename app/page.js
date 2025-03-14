@@ -8,8 +8,8 @@ import TransparentBtnLink from '@/components/buttons/TransparentBtnLink';
 import ServicesCard from '@/components/cards/ServicesCard';
 import { tabs, services } from '@/data/ServicesData';
 
-import heroImg1 from '@/public/imgs/hero-img-1.jpg';
-import heroImg3 from '@/public/imgs/hero-img-3.jpg';
+import heroImg1 from '@/public/imgs/ui/hero-img-1.jpg';
+import heroImg3 from '@/public/imgs/ui/hero-img-3.jpg';
 import Image from 'next/image';
 import clsx from 'clsx';
 import TestimonialSlider from '@/components/sliders/TestimonialSlider';
