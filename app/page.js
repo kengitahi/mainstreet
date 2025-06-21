@@ -18,7 +18,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('webdev');
 
   return (
-    <main id="main-content" className="flex flex-col flex-wrap justify-between items-center p-4 mx-auto mt-16 max-w-screen-xl">
+    <main id="main-content" className="flex flex-col flex-wrap justify-between items-center p-4 mx-auto mt-16 max-w-(--breakpoint-xl)">
       <div className="my-20 hero">
         <div>
           <motion.div

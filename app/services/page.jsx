@@ -12,7 +12,7 @@ export default function Services() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
-			className='flex flex-col flex-wrap justify-between p-4 mx-auto mt-20 max-w-screen-xl services'
+			className='flex flex-col flex-wrap justify-between p-4 mx-auto mt-20 max-w-(--breakpoint-xl) services'
 		>
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}

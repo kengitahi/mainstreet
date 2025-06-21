@@ -1,6 +1,77 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-inter: var(--font-inter), sans-serif;
+  --font-lexend: var(--font-lexend), sans-serif;
+
+  --shadow-t-sm: 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-t-md:
+    0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-t-lg:
+    0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-t-xl:
+    0 -20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-t-2xl: 0 -25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-t-3xl: 0 -35px 60px -15px rgba(0, 0, 0, 0.3);
+  --shadow-b-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-b-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-b-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-b-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 -10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-b-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-b-3xl: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+  --shadow-l-sm: -1px 0 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-l-md:
+    -4px 0 6px -1px rgba(0, 0, 0, 0.1), 2px 0 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-l-lg:
+    -10px 0 15px -3px rgba(0, 0, 0, 0.1), 4px 0 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-l-xl:
+    -20px 0 25px -5px rgba(0, 0, 0, 0.1), 10px 0 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-l-2xl: -25px 0 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-l-3xl: -35px 0 60px -15px rgba(0, 0, 0, 0.3);
+  --shadow-r-sm: 1px 0 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-r-md:
+    4px 0 6px -1px rgba(0, 0, 0, 0.1), -2px 0 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-r-lg:
+    10px 0 15px -3px rgba(0, 0, 0, 0.1), -4px 0 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-r-xl:
+    20px 0 25px -5px rgba(0, 0, 0, 0.1), -10px 0 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-r-2xl: 25px 0 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-r-3xl: 35px 0 60px -15px rgba(0, 0, 0, 0.3);
+  --shadow-all-sm: 0 0 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-all-md:
+    0 0 6px -1px rgba(0, 0, 0, 0.1), 0 0 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-all-lg:
+    0 0 15px -3px rgba(0, 0, 0, 0.1), 0 0 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-all-xl:
+    0 0 25px -5px rgba(0, 0, 0, 0.1), 0 0 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-all-2xl: 0 0 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-all-3xl: 0 0 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 * {
 	scroll-padding-top: 5rem;

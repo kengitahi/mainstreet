@@ -10,7 +10,7 @@ export default function Contact() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
-			className='flex flex-col flex-wrap justify-between max-w-screen-xl p-4 mx-auto mt-20 services'
+			className='flex flex-col flex-wrap justify-between max-w-(--breakpoint-xl) p-4 mx-auto mt-20 services'
 		>
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}

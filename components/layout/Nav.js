@@ -81,7 +81,7 @@ const Nav = () => {
     return (
         <>
             <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg backdrop-blur-3xl bg-white/70 dark:bg-gray-900 start-0 dark:border-gray-600 font-lexend">
-                <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-screen-xl">
+                <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-(--breakpoint-xl)">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Image src={Logo} alt="MainStreet Digital Logo" priority height={44} />
                     </a>
@@ -93,7 +93,7 @@ const Nav = () => {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="inline-flex justify-center items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex justify-center items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             aria-controls="navbar-sticky"
                             aria-expanded={isOpen}
                         >
@@ -148,7 +148,7 @@ const Nav = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 z-20 backdrop-blur-sm bg-black/20 md:hidden"
+                            className="fixed inset-0 z-20 backdrop-blur-xs bg-black/20 md:hidden"
                             onClick={() => setIsOpen(false)}
                         />
                         <motion.div
