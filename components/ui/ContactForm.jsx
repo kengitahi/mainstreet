@@ -24,7 +24,6 @@ export default function ContactForm() {
 	});
 
 	const handleFormSubmit = async (event) => {
-		console.log(formData);
 		event.preventDefault();
 		try {
 			setStatus('pending');
