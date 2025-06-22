@@ -80,7 +80,7 @@ const Nav = () => {
 
     return (
         <>
-            <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg backdrop-blur-3xl bg-white/70 dark:bg-gray-900 start-0 dark:border-gray-600 font-lexend">
+            <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg backdrop-blur-3xl bg-white/70 start-0 font-lexend">
                 <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-(--breakpoint-xl)">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Image src={Logo} alt="MainStreet Digital Logo" priority height={44} />
@@ -93,7 +93,7 @@ const Nav = () => {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="inline-flex justify-center items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex justify-center items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200"
                             aria-controls="navbar-sticky"
                             aria-expanded={isOpen}
                         >
@@ -120,7 +120,7 @@ const Nav = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-                        <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg border border-gray-100 md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg border border-gray-100 md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                             {navLinks.map((link) => (
                                 <li key={link.href}>
                                     <a
@@ -128,7 +128,7 @@ const Nav = () => {
                                         className={`block py-2 px-3 ${pathname === link.href
                                                 ? 'text-[#232BB1] font-semibold'
                                                 : 'text-gray-900 hover:text-[#232BB1]'
-                                            } rounded md:p-0 dark:text-white dark:hover:text-blue-500`}
+                                            } rounded md:p-0`}
                                     >
                                         {link.text}
                                     </a>
@@ -156,7 +156,7 @@ const Nav = () => {
                             animate="open"
                             exit="closed"
                             variants={menuVariants}
-                            className="fixed top-[73px] right-0 bottom-0 z-40 w-[300px] bg-white/95 backdrop-blur-lg dark:bg-gray-800/95 shadow-xl md:hidden overflow-y-auto"
+                            className="fixed top-[73px] right-0 bottom-0 z-40 w-[300px] bg-white/95 backdrop-blur-lg shadow-xl md:hidden overflow-y-auto"
                         >
                             <div className="flex flex-col p-4">
                                 {navLinks.map((link, i) => (
@@ -167,7 +167,7 @@ const Nav = () => {
                                         href={link.href}
                                         className={`py-3 px-4 text-lg ${pathname === link.href
                                                 ? 'text-[#232BB1] font-semibold bg-blue-50 rounded-lg'
-                                                : 'text-gray-900 hover:bg-gray-50 rounded-lg dark:text-gray-100 dark:hover:bg-gray-700/50'
+                                                : 'text-gray-900 hover:bg-gray-50 rounded-lg'
                                             }`}
                                     >
                                         {link.text}

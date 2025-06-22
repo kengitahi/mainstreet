@@ -47,10 +47,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="mb-6 max-w-2xl text-5xl font-bold tracking-tight leading-tight text-gray-900 capitalize dark:text-white font-lexend">Transform Your Business with Expert Digital Solutions</h2>
-            <p className="mb-4 max-w-2xl text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-600 font-inter">Elevate your online presence with our comprehensive digital services tailored for small businesses.</p>
+            <h2 className="mb-6 max-w-2xl text-5xl font-bold tracking-tight leading-tight text-gray-900 capitalize font-lexend">Transform Your Business with Expert Digital Solutions</h2>
+            <p className="mb-4 max-w-2xl text-gray-600 lg:mb-8 md:text-lg lg:text-xl font-inter">Elevate your online presence with our comprehensive digital services tailored for small businesses.</p>
 
-            <p className="mb-6 max-w-2xl text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-600 font-inter">We combine cutting-edge technology and big-agency expertise with a deep understanding of the digital landscape to boost your online presence, connect you with more customers, and empower your business to succeed online.</p>
+            <p className="mb-6 max-w-2xl text-gray-600 lg:mb-8 md:text-lg lg:text-xl font-inter">We combine cutting-edge technology and big-agency expertise with a deep understanding of the digital landscape to boost your online presence, connect you with more customers, and empower your business to succeed online.</p>
           </motion.div>
 
           <motion.div
@@ -64,7 +64,7 @@ export default function Home() {
                 Get Started
                 <motion.svg
                   whileHover={{ x: 5 }}
-                  className="w-6 h-6 transition-all text-currentColor dark:text-white"
+                  className="w-6 h-6 transition-all text-currentColor"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

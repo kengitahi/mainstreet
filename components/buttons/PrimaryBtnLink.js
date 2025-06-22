@@ -2,7 +2,7 @@ import React from 'react'
 
 const PrimaryBtnLink = ({ children, text, href, size, classes }) => {
 
-    let btnClasses = 'flex items-center gap-2 text-base font-medium text-center text-white bg-[#232BB1] rounded-lg max-w-fit font-lexend hover:bg-blue-800 focus:ring-4 focus:outline-hidden focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ';
+    let btnClasses = 'flex items-center gap-2 text-base font-medium text-center text-white bg-[#232BB1] rounded-lg max-w-fit font-lexend hover:bg-blue-800 focus:ring-4 focus:outline-hidden focus:ring-blue-300';
 
     btnClasses += classes;
 
