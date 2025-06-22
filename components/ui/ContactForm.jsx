@@ -14,6 +14,7 @@ export default function ContactForm() {
 
 	const [status, setStatus] = useState('idle');
 	const [error, setError] = useState(null);
+	const [isMessageFading, setIsMessageFading] = useState(false);
 
 	const [formData, setFormData] = useState({
 		first_name: '',
@@ -52,10 +53,15 @@ export default function ContactForm() {
 					subject: '',
 				});
 
-				// Hide success message after 5 seconds
+				// Hide success message after 5 seconds with fade out
 				setTimeout(() => {
-					setStatus('idle');
-				}, 5000);
+					setIsMessageFading(true);
+					// Actually hide after animation completes
+					setTimeout(() => {
+						setStatus('idle');
+						setIsMessageFading(false);
+					}, 500); // 500ms for slide animation
+}, 4500); // Start fade at 4.5s so total is still 5s
 			} else {
 				setStatus('error');
 				setError(`${res.status} ${res.statusText}`);
@@ -178,29 +184,41 @@ export default function ContactForm() {
 					></TextArea>
 				</div>
 				{/* Success Message */}
-					{status === 'ok' && (
-    				<div className='mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg'>
- 							<div className='flex items-center'>
-  								<svg className='w-5 h-5 mr-2' fill='currentColor' viewBox='0 0 20 20'>
- 									<path fillRule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clipRule='evenodd' />
-  								</svg>
-  								<span className='font-medium'>Success! Thank you so much, your message has been sent successfully.</span>
- 							</div>
- 							<span className='font-medium'>We will get back to you shortly (typically within a few hours).</span>
-  				</div>
-					)}
+        {status === 'ok' && (
+ 					<div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+  						isMessageFading
+ 							? 'max-h-0 opacity-0 mb-0'
+ 							: 'max-h-32 opacity-100 mb-4'
+ 					}`}>
+  						<div className='p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg'>
+   							<div className='flex items-center'>
+    								<svg className='w-5 h-5 mr-2' fill='currentColor' viewBox='0 0 20 20'>
+   									<path fillRule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clipRule='evenodd' />
+    								</svg>
+    								<span className='font-medium'>Success! Thank you so much, your message has been sent successfully.</span>
+   							</div>
+   							<span className='font-medium'>We will get back to you shortly (typically within a few hours).</span>
+  						</div>
+ 					</div>
+        )}
 
-					{/* Error Message */}
-					{status === 'error' && (
-						<div className='mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg'>
-							<div className='flex items-center'>
-								<svg className='w-5 h-5 mr-2' fill='currentColor' viewBox='0 0 20 20'>
-									<path fillRule='evenodd' d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z' clipRule='evenodd' />
-								</svg>
-								<span className='font-medium'>There was an issue sending the form. Please try again.</span>
-							</div>
-						</div>
-					)}
+        {/* Error Message */}
+        {status === 'error' && (
+         	<div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          		isMessageFading
+         			? 'max-h-0 opacity-0 mb-0'
+         			: 'max-h-32 opacity-100 mb-4'
+         	}`}>
+          		<div className='p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg'>
+           			<div className='flex items-center'>
+            				<svg className='w-5 h-5 mr-2' fill='currentColor' viewBox='0 0 20 20'>
+           					<path fillRule='evenodd' d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z' clipRule='evenodd' />
+            				</svg>
+            				<span className='font-medium'>There was an issue sending the form. Please try again.</span>
+           			</div>
+          		</div>
+         	</div>
+        )}
 
 				<PrimaryBtn type='submit' text='Send Message'>
 					<svg
