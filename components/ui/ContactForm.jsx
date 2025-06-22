@@ -40,7 +40,10 @@ export default function ContactForm() {
 			if (res.status === 200) {
 				setStatus('ok');
 
-				// Clear the form inputs after successful submit
+				// Reset the native form
+				event.target.reset();
+
+				// Clear the React state
 				setFormData({
 					first_name: '',
 					last_name: '',
@@ -48,6 +51,11 @@ export default function ContactForm() {
 					message: '',
 					subject: '',
 				});
+
+				// Hide success message after 5 seconds
+				setTimeout(() => {
+					setStatus('idle');
+				}, 5000);
 			} else {
 				setStatus('error');
 				setError(`${res.status} ${res.statusText}`);
@@ -176,7 +184,7 @@ export default function ContactForm() {
   								<svg className='w-5 h-5 mr-2' fill='currentColor' viewBox='0 0 20 20'>
  									<path fillRule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clipRule='evenodd' />
   								</svg>
-  								<span className='font-medium'>Success! Your message has been sent.</span>
+  								<span className='font-medium'>Success! Thank you so much, your message has been sent successfully.</span>
  							</div>
  							<span className='font-medium'>We will get back to you shortly (typically within a few hours).</span>
   				</div>
