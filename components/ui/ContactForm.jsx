@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { subjectData } from "@/data/FormSubjectData";
+import {sendEmail} from "@/app/actions/sendEmail"
+import fieldsAreEmpty from "@/app/helpers/fieldsAreEmpty"
 
 import Label from "@/components/forms/Label";
 import Input from "@/components/forms/Input";
@@ -14,6 +16,7 @@ export default function ContactForm() {
 
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
+  const [validationError, setValidationError] = useState(null);
 
   const [showMessage, setShowMessage] = useState(false);
   const [isMessageFading, setIsMessageFading] = useState(false);
@@ -28,19 +31,24 @@ export default function ContactForm() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    if(fieldsAreEmpty(formData)){
+      setValidationError(true);
+
+      return;
+    }
+
     try {
       setStatus("pending");
       setError(null);
-      const myForm = event.target;
-      const formData = new FormData(myForm);
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
-      if (res.status === 200) {
+      setValidationError(null);
+      
+      const res = await sendEmail(formData);
+
+      if (res.success) {
         setStatus("ok");
 
         // Trigger entrance animation
@@ -63,10 +71,10 @@ export default function ContactForm() {
         // Hide success message after 5 seconds with fade out
         setTimeout(() => {
           setIsMessageFading(true);
-          // Actually hide after animation completes
+
+          // Hide after animation completes
           setTimeout(() => {
             setStatus("idle");
-
             setShowMessage(false);
             setIsMessageFading(false);
           }, 500); // 500ms for slide animation
@@ -74,7 +82,6 @@ export default function ContactForm() {
       } else {
         setStatus("error");
         setError(`${res.status} ${res.statusText}`);
-
         setIsMessageFading(false);
 
         // Trigger entrance animation
@@ -85,7 +92,6 @@ export default function ContactForm() {
     } catch (e) {
       setStatus("error");
       setError(`${e}`);
-
       setIsMessageFading(false);
 
       // Trigger entrance animation
@@ -97,6 +103,7 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form">
+      {error && <p>Error: {error}</p>}
       <form name="main-contact-form" onSubmit={handleFormSubmit}>
         <div className="flex flex-col gap-4 mb-4 md:flex-row">
           <input type="hidden" name="form-name" value="main-contact-form" />
@@ -155,8 +162,7 @@ export default function ContactForm() {
           <Label label="The Subject of Your Message:" />
           <select
             name="subject"
-            className="border border-gray-600 rounded-lg focus:border-[#232BB1] focus:outline-hidden
-focus:ring-none focus:ring-offset-0 p-2 w-full"
+            className="border border-gray-600 rounded-lg focus:border-[#232BB1] focus:outline-hidden focus:ring-none focus:ring-offset-0 p-2 w-full"
             value={formData.subject}
             onChange={(e) =>
               setFormData({
@@ -272,6 +278,65 @@ focus:ring-none focus:ring-offset-0 p-2 w-full"
           </div>
         )}
 
+        {/* Validation Error Message */}
+        {status === "error" && (
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-in-out ${
+              isMessageFading
+                ? "max-h-0 opacity-0 mb-0"
+                : showMessage
+                  ? "max-h-32 opacity-100 mb-4"
+                  : "max-h-0 opacity-0 mb-0"
+            }`}
+          >
+            <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1
+0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="font-medium">
+                  There was an issue with the data you entered above. Please try again.
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {status === "pending" && (
+        <PrimaryBtn type="button" disabled>
+         <svg 
+            className="mr-3 -ml-1 size-5 animate-spin text-white" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24">
+              <circle 
+                className="opacity-25" 
+                cx="12" 
+                cy="12" 
+                r="10" 
+                stroke="currentColor" 
+                strokeWidth="4">
+              </circle>
+              <path 
+                className="opacity-75" 
+                fill="currentColor" 
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+          </svg>  
+          Sending Message
+        </PrimaryBtn>
+        )}
+
+        {status == "idle" && (
         <PrimaryBtn type="submit" text="Send Message">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -288,6 +353,8 @@ focus:ring-none focus:ring-offset-0 p-2 w-full"
             />
           </svg>
         </PrimaryBtn>
+        )}
+        
       </form>
     </div>
   );
