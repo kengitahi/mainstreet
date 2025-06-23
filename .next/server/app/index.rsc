@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:I[6573,["621","static/chunks/621-a8faa54785ec5ecb.js","766","static/chunks/766-43190d876d8a1069.js","177","static/chunks/app/layout-b9cc72f8de1c44ef.js"],"default"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+5:I[9555,["621","static/chunks/621-a8faa54785ec5ecb.js","766","static/chunks/766-43190d876d8a1069.js","177","static/chunks/app/layout-b9cc72f8de1c44ef.js"],"default"]
+6:I[894,[],"ClientPageRoot"]
+7:I[2199,["621","static/chunks/621-a8faa54785ec5ecb.js","766","static/chunks/766-43190d876d8a1069.js","357","static/chunks/357-62baa3f64426d989.js","974","static/chunks/app/page-fe48510f8935c1e3.js"],"default"]
+a:I[9665,[],"OutletBoundary"]
+d:I[4911,[],"AsyncMetadataOutlet"]
+f:I[9665,[],"ViewportBoundary"]
+11:I[9665,[],"MetadataBoundary"]
+13:I[6614,[],""]
+:HL["/_next/static/media/84455f2b5a591033-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/43dc05b24d962eef.css","style"]
+0:{"P":null,"b":"Ub7VtVwJd9NvGWC_lEC7e","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/43dc05b24d962eef.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"suppressHydrationWarning":true,"lang":"en","children":["$","body",null,{"suppressHydrationWarning":true,"className":"__variable_e8ce0c __variable_86777a","children":[["$","script",null,{"children":"0"}],["$","$L2",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L5",null,{}]]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L6",null,{"Component":"$7","searchParams":{},"params":{},"promises":["$@8","$@9"]}],null,["$","$La",null,{"children":["$Lb","$Lc",["$","$Ld",null,{"promise":"$@e"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","C0c2xQbmIIlhp8EHcelAAv",{"children":[["$","$Lf",null,{"children":"$L10"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$L11",null,{"children":"$L12"}]]}],false]],"m":"$undefined","G":["$13","$undefined"],"s":false,"S":true}
+14:"$Sreact.suspense"
+15:I[4911,[],"AsyncMetadata"]
+8:{}
+9:{}
+12:["$","div",null,{"hidden":true,"children":["$","$14",null,{"fallback":null,"children":["$","$L15",null,{"promise":"$@16"}]}]}]
+c:null
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+b:null
+e:{"metadata":[["$","title","0",{"children":"MainStreet Digital - Your Business, Our Digital Expertise"}],["$","meta","1",{"name":"description","content":"MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help businesses thrive online."}],["$","meta","2",{"property":"og:title","content":"MainStreet Digital - Your Business, Our Digital Expertise"}],["$","meta","3",{"property":"og:description","content":"MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help businesses thrive online."}],["$","meta","4",{"property":"og:url","content":"https://mainstreetdigital.netlify.app/"}],["$","meta","5",{"property":"og:site_name","content":"MainStreet Digital"}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"MainStreet Digital - Your Business, Our Digital Expertise"}],["$","meta","9",{"name":"twitter:description","content":"MainStreet Digital crafts custom, high-impact web solutions that capture your brand's essence and help businesses thrive online."}],["$","link","10",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"128x128"}]],"error":null,"digest":"$undefined"}
+16:{"metadata":"$e:metadata","error":null,"digest":"$undefined"}
