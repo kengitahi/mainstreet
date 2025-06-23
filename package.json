@@ -1,12 +1,11 @@
 {
   "name": "mainstreet",
   "version": "0.1.0",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
     "postinstall": "flowbite-react patch"
   },
@@ -24,15 +23,15 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.3.4",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^15.3.4",
     "postcss": "^8.5.6",
     "prettier": "^3.5.3",
     "prettier-plugin-blade": "^2.1.21",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "tailwindcss": "^4.1.10"
   },
-  "overrides": {
-    "ajv": "^8.17.1"
-  }
+  "overrides": {}
 }

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import PrimaryBtnLink from '@/components/buttons/PrimaryBtnLink'
 import Logo from '@/public/imgs/logos/mainstreet-digital.png'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import Image from 'next/image'
 
 const Nav = () => {
@@ -82,9 +83,9 @@ const Nav = () => {
         <>
             <nav className="fixed top-0 z-30 w-full border-b border-gray-200 shadow-lg backdrop-blur-3xl bg-white/70 start-0 font-lexend">
                 <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-(--breakpoint-xl)">
-                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Image src={Logo} alt="MainStreet Digital Logo" priority height={44} />
-                    </a>
+                    </Link>
                     <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
                         <div className="hidden md:flex">
                             <PrimaryBtnLink text="Get Started" href="/contact" size="sm" />
@@ -123,7 +124,7 @@ const Nav = () => {
                         <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg border border-gray-100 md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                             {navLinks.map((link) => (
                                 <li key={link.href}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className={`block py-2 px-3 ${pathname === link.href
                                                 ? 'text-[#232BB1] font-semibold'
@@ -131,7 +132,7 @@ const Nav = () => {
                                             } rounded md:p-0`}
                                     >
                                         {link.text}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
